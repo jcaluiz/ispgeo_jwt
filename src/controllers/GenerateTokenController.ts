@@ -27,6 +27,7 @@ export default class GenerateTokenController {
           hasItBeenValidated.message
         );
       }
+      console.log('token')
       this.res.status(201).json({ token });
     } catch (error) {
       this.next(error);
