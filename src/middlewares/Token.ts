@@ -1,3 +1,4 @@
+const jwt = require('jsonwebtoken')
 
 export default class Token {
   public createToken = (user: { userId: string }): string => {
