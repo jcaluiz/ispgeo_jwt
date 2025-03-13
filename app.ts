@@ -1,6 +1,6 @@
 import "dotenv/config";
 import express from "express";
- import cors from "cors";
+import cors from "cors";
 import routes from "./src/routes/Routes";
 
 export default class App {
@@ -22,8 +22,12 @@ export default class App {
     //     ]
     // };
 
-   //  this.app.use(cors(corsOptions));
-     this.app.use(cors('*'));
+
+    const corsOptions = {
+      origin: '*'
+  };
+  
+  this.app.use(cors(corsOptions));
     this.app.use(express.json());
     this.app.use(express.urlencoded({ extended: true }));
   }

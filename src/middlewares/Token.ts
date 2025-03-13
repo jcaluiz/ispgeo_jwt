@@ -1,5 +1,3 @@
-const jwt = require("jsonwebtoken");
-import "dotenv/config";
 
 export default class Token {
   public createToken = (user: { userId: string }): string => {
@@ -29,3 +27,4 @@ export default class Token {
     return decoded;
   };
 }
+
