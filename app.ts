@@ -14,12 +14,13 @@ export default class App {
   }
 
   private config(): void {
-    // const corsOptions = {
-    //     origin: [
-    //         process.env.FRONT_URL as string,
-    //         'http://localhost:5502',
-    //     ]
-    // };
+     const corsOptions = {
+         origin: [
+       //      process.env.FRONT_URL as string,
+      //       'http://localhost:5502',
+      '*'
+         ]
+     };
 
     // this.app.use(cors(corsOptions));
     this.app.use(express.json());

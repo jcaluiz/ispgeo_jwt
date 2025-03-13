@@ -5,7 +5,7 @@ export default class Token {
   public createToken = (user: { userId: string }): string => {
     const secret = process.env.JWT_SECRET || "jwt_secret";
     const { userId } = user;
-    console.log(user);
+
     const token = jwt.sign({ userId }, secret, {
       expiresIn: "6h",
       algorithm: "HS256",
