@@ -28,7 +28,7 @@ export default class GenerateTokenController {
         );
       }
       console.log('token')
-      this.res.status(201).json({ token });
+      this.res.status(200).json({ token });
     } catch (error) {
       this.next(error);
     }
