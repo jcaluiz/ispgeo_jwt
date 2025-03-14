@@ -17,6 +17,7 @@ export default class GenerateTokenController {
   }
 
   public generateToken() {
+    console.log("token aki no controller1");
     try {
       const user = this.req.body;
       const token = this.token.createToken(user);
@@ -27,7 +28,7 @@ export default class GenerateTokenController {
           hasItBeenValidated.message
         );
       }
-      console.log("token aki no controller", token);
+      console.log("token aki no controller2", token);
       this.res.status(200).json({ token });
     } catch (error) {
       this.next(error);
