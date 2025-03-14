@@ -8,7 +8,6 @@ export default class App {
 
   constructor() {
     this.app = express();
-
     this.config();
     this.routes();
   }
@@ -23,13 +22,13 @@ export default class App {
     // };
 
     // this.app.use(cors(corsOptions));
-    this.app.use(
-      cors({
-        origin: "*",
-        methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
-        // allowedHeaders: ['Content-Type', 'Authorization']
-      })
-    );
+    // this.app.use(
+    // cors({
+    //   origin: "*",
+    //   methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
+    //   // allowedHeaders: ['Content-Type', 'Authorization']
+    // })
+    // );
     this.app.use(express.json());
     this.app.use(express.urlencoded({ extended: true }));
   }
