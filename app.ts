@@ -14,15 +14,22 @@ export default class App {
   }
 
   private config(): void {
-    const corsOptions = {
-      origin: process.env.FRONT_URL,
-      methods: "POST",
-      allowedHeaders: ["Content-Type", "Authorization"],
-      exposedHeaders: ["Authorization"],
-      optionsSuccessStatus: 204,
-    };
+    // const corsOptions = {
+    //   origin: process.env.FRONT_URL,
+    //   methods: "POST",
+    //   allowedHeaders: ["Content-Type", "Authorization"],
+    //   exposedHeaders: ["Authorization"],
+    //   optionsSuccessStatus: 204,
+    // };
 
-    this.app.use(cors(corsOptions));
+    // this.app.use(cors(corsOptions));
+    this.app.use(
+      cors({
+        origin: "*",
+        methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
+        // allowedHeaders: ['Content-Type', 'Authorization']
+      })
+    );
     this.app.use(express.json());
     this.app.use(express.urlencoded({ extended: true }));
   }
