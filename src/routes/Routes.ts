@@ -7,7 +7,7 @@ const routes = Router();
 
 routes.post(
   "/generate-token",
-  DomainVerification.verifyDomain,
+  //   DomainVerification.verifyDomain,
   (req: Request, res: Response, next: NextFunction) =>
     new GenerateTokenController(req, res, next).generateToken(),
   ErrorHandler.handle
