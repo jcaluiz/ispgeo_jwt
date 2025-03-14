@@ -14,26 +14,21 @@ export default class App {
   }
 
   private config(): void {
-    // const corsOptions = {
-      //   origin: [
-       //      process.env.FRONT_URL as string,
-      //       'http://localhost:5502',
-    //  '*'
-    //     ]
-    // };
-
-
     const corsOptions = {
-      origin: '*'
-  };
-  
-  this.app.use(cors(corsOptions));
+      origin: process.env.FRONT_URL,
+      methods: "POST",
+      allowedHeaders: ["Content-Type", "Authorization"],
+      exposedHeaders: ["Authorization"],
+      optionsSuccessStatus: 204,
+    };
+
+    this.app.use(cors(corsOptions));
     this.app.use(express.json());
     this.app.use(express.urlencoded({ extended: true }));
   }
 
   private routes(): void {
-    this.app.use("/api", routes);
+    this.app.use(routes);
   }
 
   public start(PORT: string | number): void {
